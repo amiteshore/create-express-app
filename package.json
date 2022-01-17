@@ -1,0 +1,12 @@
+{
+  "name": "create-express-app",
+  "version": "0.0.1",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amiteshore/create-express-app.git"
+  },
+  "dependencies": {
+    "commander": "^8.3.0"
+  }
+}
