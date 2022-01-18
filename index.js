@@ -45,34 +45,31 @@ fs.cpSync(path.join(templatePath, "src"), path.join(projectPath, "src"), {
 });
 
 fs.copyFileSync(
-  path.join(templatePath, ".gitignore"),
-  path.join(projectPath, ".gitignore")
-);
-
-fs.copyFileSync(
-  path.join(templatePath, ".babelrc"),
+  path.join(templatePath, "babelrc"),
   path.join(projectPath, ".babelrc")
 );
 
-fs.copyFileSync(
-  path.join(templatePath, ".env"),
-  path.join(projectPath, ".env")
-);
+fs.copyFileSync(path.join(templatePath, "env"), path.join(projectPath, ".env"));
 
-if (program.opts().prettier) {
-  fs.copyFileSync(
-    path.join(templatePath, ".prettierrc"),
-    path.join(projectPath, ".prettierrc")
-  );
-  devDependencies.push("prettier");
-}
+fs.copyFileSync(
+  path.join(templatePath, "gitignore"),
+  path.join(projectPath, ".gitignore")
+);
 
 if (program.opts().eslint) {
   fs.copyFileSync(
-    path.join(templatePath, ".eslintrc"),
+    path.join(templatePath, "eslintrc"),
     path.join(projectPath, ".eslintrc")
   );
   devDependencies.push("eslint");
+}
+
+if (program.opts().prettier) {
+  fs.copyFileSync(
+    path.join(templatePath, "prettierrc"),
+    path.join(projectPath, ".prettierrc")
+  );
+  devDependencies.push("prettier");
 }
 
 if (program.opts().test) {
