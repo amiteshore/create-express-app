@@ -7,6 +7,7 @@
     "url": "git+https://github.com/amiteshore/create-express-app.git"
   },
   "dependencies": {
+    "chalk": "^5.0.0",
     "commander": "^8.3.0"
   }
 }
