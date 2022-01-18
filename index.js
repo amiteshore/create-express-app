@@ -45,6 +45,11 @@ fs.cpSync(path.join(templatePath, "src"), path.join(projectPath, "src"), {
 });
 
 fs.copyFileSync(
+  path.join(templatePath, ".gitignore"),
+  path.join(projectPath, ".gitignore")
+);
+
+fs.copyFileSync(
   path.join(templatePath, ".babelrc"),
   path.join(projectPath, ".babelrc")
 );
