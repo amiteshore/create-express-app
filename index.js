@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import path from "path";
 import fs from "fs";
 import url from "url";
@@ -29,15 +31,15 @@ let devDependencies = [
   "@babel/core",
   "@babel/node",
   "@babel/preset-env",
-  "nodemon"
+  "nodemon",
 ];
 let packageJson = {
   name: projectName,
   scripts: {
     start: "node dist",
     build: "babel src --out-dir dist",
-    dev: "nodemon --watch .env --watch src --exec babel-node src"
-  }
+    dev: "nodemon --watch .env --watch src --exec babel-node src",
+  },
 };
 
 console.log();
@@ -47,7 +49,7 @@ console.log();
 fs.mkdirSync(projectPath);
 
 fs.cpSync(path.join(templatePath, "src"), path.join(projectPath, "src"), {
-  recursive: true
+  recursive: true,
 });
 
 fs.copyFileSync(
@@ -80,7 +82,7 @@ if (program.opts().prettier) {
 
 if (program.opts().test) {
   fs.cpSync(path.join(templatePath, "test"), path.join(projectPath, "test"), {
-    recursive: true
+    recursive: true,
   });
   devDependencies.push("mocha", "chai", "supertest", "@babel/register");
   packageJson.scripts["test"] = "mocha --watch --require @babel/register test";

@@ -2,6 +2,9 @@
   "name": "create-express-app",
   "version": "0.0.1",
   "type": "module",
+  "bin": {
+    "create-express-app": "./index.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/amiteshore/create-express-app.git"
