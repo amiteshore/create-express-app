@@ -25,7 +25,14 @@ const program = new Command("create-express-app")
 const projectPath = path.join(process.cwd(), projectName);
 const templatePath = path.join(__dirname, "templates");
 
-let dependencies = ["express", "morgan", "http-errors", "dotenv"];
+let dependencies = [
+  "express",
+  "morgan",
+  "http-errors",
+  "dotenv",
+  "cors",
+  "helmet",
+];
 let devDependencies = [
   "@babel/cli",
   "@babel/core",
